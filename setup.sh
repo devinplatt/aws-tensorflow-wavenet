@@ -53,9 +53,6 @@ cd /home/ec2-user/src
 git clone https://github.com/ibab/tensorflow-wavenet.git
 cd tensorflow-wavenet
 sudo env PATH=$PATH `which pip` install -r requirements.txt
-# Need to fix a bug, at least until my pull request is merged:
-# https://github.com/ibab/tensorflow-wavenet/pull/203
-sed -i 's/if\sids\sis\sNone/if not ids/' /home/ec2-user/src/tensorflow-wavenet/wavenet/audio_reader.py
 sudo chown -R ec2-user:ec2-user .
 # Install ffprobe/ffmpeg for youtube-dl
 # http://ftrack.rtd.ftrack.com/en/3.3.9/administering/managing_local_installation/configuring_ffmpeg.html
